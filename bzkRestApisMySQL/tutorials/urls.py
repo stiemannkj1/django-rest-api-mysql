@@ -1,8 +1,8 @@
-from django.conf.urls import url 
+from django.urls import path, re_path, include
 from tutorials import views 
  
 urlpatterns = [ 
-    url(r'^api/tutorials$', views.tutorial_list),
-    url(r'^api/tutorials/(?P<pk>[0-9]+)$', views.tutorial_detail),
-    url(r'^api/tutorials/published$', views.tutorial_list_published)
+    path('tutorials', views.tutorial_list),
+    path('tutorials/<int:pk>', views.tutorial_detail),
+    path('tutorials/published', views.tutorial_list_published),
 ]
