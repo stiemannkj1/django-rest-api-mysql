@@ -12,6 +12,25 @@ Full-stack CRUD App:
 
 ## Running the Application
 
+Install MySQL:
+```
+sudo apt-get update && sudo apt-get install mysql-server
+```
+
+Install Python 3 and dependencies:
+```
+cd ~/Downloads/
+wget https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tgz
+tar -xzf Python-3.12.7.tgz
+cd Python-3.12.7
+./configure --enable-optimizations --prefix=/usr/local/python312
+make -j4
+sudo make altinstall
+pip install pymysql
+pip install "django>=4.0,<5.0"
+pip install "djangorestframework<3.0,>=2.0"
+```
+
 Create the DB tables first:
 ```
 python clean_tables.py
