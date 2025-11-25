@@ -5,14 +5,19 @@ set -e
 SCRIPT_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; printf "$PWD" )"
 
 OS_TYPE=$(uname)
-if [[ "$OS_TYPE" == "Darwin" ]]; then
-    OS_TYPE=macos
-    echo "OS: $OS_TYPE"
-elif [[ "$OS_TYPE" == "Linux" ]]; then
-    echo "OS: $OS_TYPE"
-else
-    echo "OS: UNKNOWN ($OS_TYPE)"
-fi
+
+case "$OS_TYPE" in
+    Darwin)
+        OS_TYPE="macos"
+        echo "OS: $OS_TYPE"
+        ;;
+    Linux)
+        echo "OS: $OS_TYPE"
+        ;;
+    *)
+        echo "OS: UNKNOWN ($OS_TYPE)"
+        ;;
+esac
 
 if [ -z "$ARCH" ]; then
 	ARCH="$(uname -m)"
