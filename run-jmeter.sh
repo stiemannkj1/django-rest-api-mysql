@@ -60,6 +60,8 @@ else
     echo "jmeter is already installed."
 fi
 
+"$SCRIPT_PATH/.java/jmeter/bin/jmeter" -n -t setup.jmx    -l ".java/jmeter/setup$(date +%s).jtl" "$@" ||
+    { echo "Setup failed!" && exit 1; }
 RESULTS=".java/jmeter/results$(date +%s)"
-"$SCRIPT_PATH/.java/jmeter/bin/jmeter" -j .java/jmeter/jmeter.log -n -t testplan.jmx -l "$RESULTS.jtl" "$@"
-"$SCRIPT_PATH/.java/jmeter/bin/jmeter" -o "$RESULTS"       -g "$RESULTS.jtl"
+"$SCRIPT_PATH/.java/jmeter/bin/jmeter" -n -t testplan.jmx -l "$RESULTS.jtl" "$@"
+"$SCRIPT_PATH/.java/jmeter/bin/jmeter" -o "$RESULTS"      -g "$RESULTS.jtl"
