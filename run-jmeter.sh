@@ -59,7 +59,7 @@ fi
 export PATH="$JAVA_HOME/bin:$PATH"
 
 if  [ ! -f "$SCRIPT_PATH/.java/jmeter/bin/jmeter" ]; then
-    echo "jmeter not found. Extracting JDK..."
+    echo "jmeter not found. Extracting Jmeter..."
     tar -xzf "$SCRIPT_PATH/apache-jmeter-5.6.3.tar.gz" -C "$SCRIPT_PATH/.java/jmeter" --strip-components=1
     chmod +x "$SCRIPT_PATH/.java/jmeter/bin/jmeter"
 else

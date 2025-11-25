@@ -12,6 +12,13 @@ Full-stack CRUD App:
 
 ## Running the Application
 
+Install Apache + mod_wsgi:
+```
+sudo apt update
+sudo apt install apache2 libapache2-mod-wsgi-py3
+sudo a2enmod wsgi
+```
+
 Install MySQL:
 ```
 sudo apt-get update && sudo apt-get install mysql-server
