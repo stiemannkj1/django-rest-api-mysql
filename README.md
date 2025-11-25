@@ -14,6 +14,7 @@ Full-stack CRUD App:
 
 Create the DB tables first:
 ```
+python clean_tables.py
 python manage.py migrate
 ```
 Run the development web server:

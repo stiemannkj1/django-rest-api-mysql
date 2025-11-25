@@ -10,7 +10,7 @@ db_config = {
     'cursorclass': pymysql.cursors.DictCursor
 }
 
-def clear_all_rows():
+def drop_all_app_tables():
     connection = pymysql.connect(**db_config)
     try:
         with connection.cursor() as cursor:
@@ -25,18 +25,19 @@ def clear_all_rows():
             # Disable foreign key checks
             cursor.execute("SET FOREIGN_KEY_CHECKS = 0;")
 
-            # Truncate each table
+            # Drop each table
             for table in tables:
-                print(f"Clearing table {table}...")
-                cursor.execute(f"TRUNCATE TABLE `{table}`;")
+                print(f"Dropping table {table}...")
+                cursor.execute(f"DROP TABLE `{table}`;")
 
             # Re-enable foreign key checks
             cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
-        
+
         connection.commit()
-        print("All table rows cleared successfully.")
+        print("All tables dropped successfully.")
     finally:
         connection.close()
 
 if __name__ == "__main__":
-    clear_all_rows()
+    drop_all_app_tables()
+
