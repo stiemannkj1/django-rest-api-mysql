@@ -18,6 +18,19 @@ python manage.py migrate
 ```
 Run the development web server:
 ```
-python manage.py runserver 8080
+python manage.py runserver 0.0.0.0:8080
 ```
 Open the URL http://localhost:8080/ to access the application.
+
+## JMeter
+
+Run JMeter
+```
+./run-jmeter.sh -Jhost=127.0.0.1 -Jport=8080
+```
+
+Additional options:
+```
+-JtotalThreads=10 -JrampTimeSecs=300 -JtestTimeSecs=10800
+```
+

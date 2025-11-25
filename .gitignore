@@ -26,3 +26,8 @@ client/node_modules
 
 ### vscode
 .vscode
+
+### JMeter
+.java/
+jmeter-results/
+jmeter*.log
