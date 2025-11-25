@@ -12,6 +12,7 @@ case "$OS_TYPE" in
         echo "OS: $OS_TYPE"
         ;;
     Linux)
+        OS_TYPE="linux"
         echo "OS: $OS_TYPE"
         ;;
     *)
@@ -40,7 +41,7 @@ case "$ARCH" in
         ;;
 esac
 
-echo "ARCH: $OS_TYPE"
+echo "ARCH: $ARCH"
 
 if  [ ! -f "$SCRIPT_PATH/.java/Contents/Home/bin/java" ] && [ ! -f "$SCRIPT_PATH/.java/bin/java" ]; then
     echo "java not found. Extracting JDK..."
